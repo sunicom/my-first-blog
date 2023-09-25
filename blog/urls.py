@@ -1,9 +1,9 @@
 from django.urls import path
 from . import views
-#from .views import SampleAppList
 
 
 urlpatterns = [
-    path('', views.SampleAppList.as_view()),
-    path('smaple', views.post_list, name='post_list'),
+    path('post/<int:pk>/', views.post_detail, name='post_detail'),
+    path('', views.post_list, name='post_list'),
+    path('list', views.SampleAppList.as_view()), # smaple
 ]
